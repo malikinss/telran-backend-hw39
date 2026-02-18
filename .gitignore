@@ -1,0 +1,14 @@
+# .gitignore
+
+.mypy_cache
+CW*.py
+__pycache__
+tmp.md
+*.csv
+*.joblib
+*.pt
+.ipynb_checkpoints
+datasets
+runs
+img.py
+.env

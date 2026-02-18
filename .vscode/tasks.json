@@ -1,0 +1,55 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "mypy launch",
+			"type": "shell",
+			"command": "mypy main.py"
+		},
+		{
+			"label": "run unit tests",
+			"type": "shell",
+			"command": "python",
+			"args": ["-m", "unittest", "discover", "tests", "-v"],
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			},
+			"options": {
+				"shell": {
+					"executable": "cmd.exe",
+					"args": ["/d", "/c"]
+				}
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "run unit tests (conda)",
+			"type": "shell",
+			"command": "conda",
+			"args": [
+				"run",
+				"-n",
+				"img_processing_env",
+				"python",
+				"-m",
+				"unittest",
+				"discover",
+				"tests",
+				"-v"
+			],
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			},
+			"options": {
+				"shell": {
+					"executable": "cmd.exe",
+					"args": ["/d", "/c"]
+				}
+			}
+		}
+	]
+}
